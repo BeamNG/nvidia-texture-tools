@@ -148,7 +148,8 @@ namespace nv
         NV_FORCEINLINE bool isDone(const PseudoIndex & i) const { nvDebugCheck(i <= this->m_size); return i == this->m_size; }
         NV_FORCEINLINE void advance(PseudoIndex & i) const { nvDebugCheck(i <= this->m_size); i++; }
 
-#if NV_CC_MSVC
+#if 0 // NV_CC_MSVC
+        // this seems broken
         NV_FORCEINLINE T & operator[]( const PseudoIndexWrapper & i ) {
             return m_buffer[i(this)];
         }
